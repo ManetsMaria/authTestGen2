@@ -4,7 +4,7 @@ import CustomFileUploader from "./components/CustomFileUploader.jsx";
 
 function App() {
     return (
-        <Authenticator>
+        <Authenticator socialProviders={['google']}>
             {({ signOut, user }) => {
                 console.log(user);
                 return (
