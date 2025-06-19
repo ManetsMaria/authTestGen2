@@ -1,9 +1,20 @@
 import './App.css'
-import CustomAuthenticator from "./components/CustomAuthenticator.jsx";
+import {Authenticator} from "@aws-amplify/ui-react";
+import CustomFileUploader from "./components/CustomFileUploader.jsx";
 
 function App() {
     return (
-        <CustomAuthenticator/>
+        <Authenticator>
+            {({ signOut, user }) => {
+                console.log(user);
+                return (
+                    <main>
+                        <CustomFileUploader/>
+                        <button onClick={signOut}>Sign out</button>
+                    </main>
+                );
+            }}
+        </Authenticator>
     );
 }
 
